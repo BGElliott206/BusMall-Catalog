@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 // Cart constructor.
 var Cart = function(items) {
@@ -8,22 +8,25 @@ var Cart = function(items) {
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  this.items.push(new CartItem(product, quantity));
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart.items));
 };
 
 Cart.prototype.removeItem = function(item) {
+Cart.prototype.removeItem = function(itemIndex) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+  this.items.splice(itemIndex, 1);
 };
 
 var CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;
 };
-
 // Product contructor.
 var Product = function(filePath, name) {
   this.filePath = filePath;
@@ -31,7 +34,6 @@ var Product = function(filePath, name) {
   Product.allProducts.push(this);
 };
 Product.allProducts = [];
-
 function generateCatalog() {
   new Product('assets/bag.jpg', 'Bag');
   new Product('assets/banana.jpg', 'Banana');
@@ -56,4 +58,5 @@ function generateCatalog() {
 }
 
 // Initialize the app by creating the big list of products with images and names
+generateCatalog();
 generateCatalog();

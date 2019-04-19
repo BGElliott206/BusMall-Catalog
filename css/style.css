@@ -1,1 +1,33 @@
 /* TODO: Make it awesome */
+body {
+  background-image: url(../assets/busmallbackground.jpeg);
+  font-family: 'roboto', monospace;
+  text-shadow: 4px 4px 12px #000000;
+  color: rgb(147, 137, 160);
+  line-height: 25px;
+}
+
+
+header li {
+  background-color: hsla(240, 75%, 55%, 0.5);    
+}
+
+header h1{
+  font-weight: bold;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+ul li {
+  float: right;
+  margin: 10px;
+  border: solid gray 3px;
+}
+
+div h1:only-of-type {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 25px;
+  text-align: left;
+}
